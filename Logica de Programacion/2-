@@ -1,0 +1,5 @@
+# crear un programa que verifique si todos los elementos de una lista son positivos. 
+
+
+my_list = [3, 6, 0, -2, 4]
+
