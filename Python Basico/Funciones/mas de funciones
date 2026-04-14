@@ -1,0 +1,22 @@
+def upside_down():
+    normal='Hello World'
+    for char in normal:
+        reversed_char= normal[::-1]
+    return reversed_char
+print(upside_down())
+#Otra forma de hacerlo
+def reverse_string(s):
+    return s[::-1]
+print(reverse_string("Hello World"))
+#Otra forma de hacerlo
+def reverse_string_loop(s):
+    reversed_s = ''
+    for char in s:
+        reversed_s = char + reversed_s
+    return reversed_s
+print(reverse_string_loop("Hello World"))
+#Otra forma de hacerlo
+def reverse_string_join(s):
+    return ''.join(reversed(s))
+print(reverse_string_join("Hello World"))
+

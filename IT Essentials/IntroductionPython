@@ -1,0 +1,17 @@
+print("My name is Gabriela")
+print("I am 24 years old")
+print("My favorite color is purple")
+print("My favorite food is argentinian barbecue")
+
+
+age=int(input("Enter your age: "))
+addition=age+10
+print(f"In 10 years, I will be {addition} years old.")
+
+
+meters=float(input("Enter a distance in meters: "))
+centimeters=float(meters*100)
+print(f"{meters} meters is equal to {centimeters} centimeters.")
+
+
+
