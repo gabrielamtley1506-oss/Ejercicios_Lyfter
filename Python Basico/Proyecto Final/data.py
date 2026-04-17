@@ -16,24 +16,28 @@ def save_csv(students_list, file_name="students.csv"):
 
 
 def open_file(students_file):
-    """Import students from a CSV file"""
+    #Import students from a CSV file
     try:
         imported_students = []
         with open(students_file, "r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
             
             for row in reader:
-                # Convert grades to integers (they come as strings from CSV)
                 row["Spanish Grade"] = int(row["Spanish Grade"])
                 row["English Grade"] = int(row["English Grade"])
                 row["Social Grade"] = int(row["Social Grade"])
                 row["Science Grade"] = int(row["Science Grade"])
                 
-                # Remove Average if it exists (we'll recalculate it)
-                row.pop("Average", None)
+                student_exists = any(
+                    s["Full Name"].lower() == row["Full Name"].lower() and 
+                    s["Section"].lower() == row["Section"].lower() 
+                    for s in students
+                )
                 
-                imported_students.append(row)
+                if not student_exists:
+                    imported_students.append(row)
         
+        students.extend(imported_students)
         print(f"\n{len(imported_students)} student(s) imported successfully from '{students_file}'!\n")
         return imported_students
     
@@ -46,4 +50,3 @@ def open_file(students_file):
     except Exception as e:
         print(f"Error importing file: {e}")
         return []
-   

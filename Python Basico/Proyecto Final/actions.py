@@ -102,19 +102,23 @@ def display_all_students(students_list):
 
 
 def students_average(students_list):
-    # Display all students and their averages
+    # Display the average grade 
     if not students_list:
         print("No students to display.")
         return
     
     print("\n" + "="*50)
-    print("STUDENT AVERAGES")
+    print("STUDENT GRADE POINT AVERAGE")
     print("="*50)
     
+    total_avg = 0
     for student in students_list:
         avg = average(student)
-        print(f"{student['Full Name']} ({student['Section']}): {avg}")
+        total_avg += avg
     
+    overall_average = total_avg / len(students_list)
+    print("\n" + "-"*50)
+    print(f"Overall Average: {overall_average:.2f}")
     print("="*50 + "\n")
 
 
