@@ -1,19 +1,19 @@
 class Circle:
-    radius=3
+    def __init__(self, radius=3):
+        self.radius = radius
         
     def get_area(self):
-        area=3.14 * (self.radius**2)
-        print(f"The area is {area}")
-        return area
+        self.area = 3.14 * (self.radius**2)
+        return self.area
     
 
 circle_1=Circle()
-circle_1.get_area()
+print(f"The area for circle 1 is: {circle_1.get_area()}")
 
 circle_2=Circle()
 circle_2.radius=7
-circle_2.get_area()
+print(f"The area for circle 2 is: {circle_2.get_area()}")
 
 circle_3=Circle()
 circle_3.radius=4
-circle_3.get_area()
+print(f"The area for circle 3 is: {circle_3.get_area()}")
