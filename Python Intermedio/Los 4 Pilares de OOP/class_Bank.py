@@ -61,8 +61,7 @@ class Savings_account(Bank_account):
                 print("Insufficient funds")
                 amount = None
             elif self.balance - amount < self.min_balance:
-                print(f"Your balance has to be above your minimum required that is: ${self.min_balance}")
-                amount = None
+                raise ValueError(f"Your balance has to be above your minimum required that is: ${self.min_balance}")
             else :
                 self.balance -= amount
                 break
