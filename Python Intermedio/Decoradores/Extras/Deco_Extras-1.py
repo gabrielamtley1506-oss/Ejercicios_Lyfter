@@ -12,6 +12,7 @@ class Person:
         return wrapper
 
 
+
     @repeat_twice
     def greetings(self):
         print("I hope you are enjoying your day")
