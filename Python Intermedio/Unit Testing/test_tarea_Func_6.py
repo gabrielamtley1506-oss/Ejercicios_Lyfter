@@ -8,25 +8,24 @@ def test_organize_from_a_to_z_with_100_words():
     "hulk-amber-draft-realm-dream-joker-knack-umbra-lemon-ether-prism-noble-jewel-queen-bridge-xerox-xeric-nifty-xenon-water-venom-lunar-titan-nexus-" \
     "ultra-eagle-quill-arrow-cloud-honey-grace"
     #Act
-    organize_from_a_to_z(words_to_organize)
+    result = organize_from_a_to_z(words_to_organize)
     #Assert
-    assert "blaze-hulk-ultra-river-acorn-amber-apple-arrow-bloom-brave-bridge-cedar-cloud-coral-crisp-delta-draft-dream-dunes-eagle-ember-epoch-ether-fable-flame-flint-frost-globe-glyph-grace-graze-hatch-haven-honey-indie-input-irony-ivory-jazz-jewel-joker-jungle-karma-kiosk-knack-kneel-lance-latch-lemon-lunar-magic-maple-metro-mirth-nerve-nexus-nifty-noble-ocean-olive-onyx-orbit-pearl-pixel-pluck-prism-queen-quest-quill-quirk-radar-realm-ridge-solar-spark-stone-swift-thorn-tiger-titan-twist-umbra-unity-urban-valor-venom-vibes-vivid-waltz-water-whirl-xenon-xeric-xerox-yacht-yield-yodel-zebra-zesty-zippy"
-
+    assert result == "acorn-amber-apple-arrow-blaze-bloom-brave-bridge-cedar-cloud-coral-crisp-delta-draft-dream-dunes-eagle-ember-epoch-ether-fable-flame-flint-frost-globe-glyph-grace-graze-hatch-haven-honey-hulk-indie-input-irony-ivory-jazz-jewel-joker-jungle-karma-kiosk-knack-kneel-lance-latch-lemon-lunar-magic-maple-metro-mirth-nerve-nexus-nifty-noble-ocean-olive-onyx-orbit-pearl-pixel-pluck-prism-queen-quest-quill-quirk-radar-realm-ridge-river-solar-spark-stone-swift-thorn-tiger-titan-twist-ultra-umbra-unity-urban-valor-venom-vibes-vivid-waltz-water-whirl-xenon-xeric-xerox-yacht-yield-yodel-zebra-zesty-zippy"
 
 def test_organize_from_a_to_z_with_upper_case():
     #Arrange
     words_to_organize = "Zebra-apple-Mango-banana"
     #Act
-    organize_from_a_to_z(words_to_organize)
+    result = organize_from_a_to_z(words_to_organize)
     #Assert
-    assert "apple-banana-Mango-Zebra"
+    assert result == "apple-banana-Mango-Zebra"
     
 
 def test_organize_from_a_to_z_already_sorted():
     #Arrange
     words_to_organize = "apple-banana-cherry-delta-echo"
     #Act
-    organize_from_a_to_z(words_to_organize)
+    result = organize_from_a_to_z(words_to_organize)
     #Assert
-    assert "apple-banana-cherry-delta-echo"
+    assert result =="apple-banana-cherry-delta-echo"
 

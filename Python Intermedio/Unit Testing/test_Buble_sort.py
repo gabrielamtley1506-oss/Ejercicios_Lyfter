@@ -1,3 +1,4 @@
+import pytest
 from Bubble_sort import bubble_sort
 
 def test_sort_with_small_list_returns_list_sorted():
@@ -32,3 +33,18 @@ def test_sort_with_empty_list_returns_list_sorted():
     result = bubble_sort(list_input)
     #Assert
     assert result == []
+
+
+def test_sort_with_non_list_parameters_raises_error():
+    #Arrange - Test with integer (should raise TypeError on len())
+    int_input = 12345
+    #Act & Assert
+    with pytest.raises(TypeError):
+        bubble_sort(int_input)
+    
+    #Arrange - Test with None (should raise TypeError on len())
+    none_input = None
+    #Act & Assert
+    with pytest.raises(TypeError):
+        bubble_sort(none_input)
+
