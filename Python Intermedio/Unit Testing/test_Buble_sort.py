@@ -1,0 +1,50 @@
+import pytest
+from Bubble_sort import bubble_sort
+
+def test_sort_with_small_list_returns_list_sorted():
+    #Arrange
+    list_input = [9, 5, 7, 10]
+    #Act
+    result = bubble_sort(list_input)
+    #Assert
+    assert result == [5, 7, 9, 10]
+
+
+def test_sort_with_large_list_returns_list_sorted():
+    #Arrange
+    list_input = [965, 777, 109, 10, 667, 509, 268, 467, 422, 624, 259, 428, 983, 545, 849, 157, 600, 118, 971, 107, 219, 235, 640, 12, 
+    621, 338, 191, 892, 924, 318, 602, 603, 319, 423, 175, 497, 981, 993, 119, 194, 370, 927, 418, 502, 321, 917, 861, 266, 563, 510, 881,
+    380, 440, 195, 220, 193, 204, 324, 54, 791, 45, 599, 750, 19, 414, 970, 337, 756, 714, 91, 655, 742, 465, 951, 35, 192, 410, 20, 226, 317,
+    517, 42, 455, 28, 840, 470, 887, 208, 962, 242, 87, 858, 775, 130, 806, 689, 403, 425, 605, 477]
+    #Act
+    result = bubble_sort(list_input)
+    #Assert
+    assert result == [10, 12, 19, 20, 28, 35, 42, 45, 54, 87, 91, 107, 109, 118, 119, 130, 157, 175, 191, 192, 193, 194, 195, 204, 208, 219, 
+    220, 226, 235, 242, 259, 266, 268, 317, 318, 319, 321, 324, 337, 338, 370, 380, 403, 410, 414, 418, 422, 423, 425, 428, 440, 455, 465, 467,
+    470, 477, 497, 502, 509, 510, 517, 545, 563, 599, 600, 602, 603, 605, 621, 624, 640, 655, 667, 689, 714, 742, 750, 756, 775, 777, 791, 
+    806, 840, 849, 858, 861, 881, 887, 892, 917, 924, 927, 951, 962, 965, 970, 971, 981, 983, 993]
+
+
+
+def test_sort_with_empty_list_returns_list_sorted():
+    #Arrange
+    list_input = []
+    #Act
+    result = bubble_sort(list_input)
+    #Assert
+    assert result == []
+
+
+def test_sort_with_non_list_parameters_raises_error():
+    #Arrange - Test with integer (should raise TypeError on len())
+    int_input = 12345
+    #Act & Assert
+    with pytest.raises(TypeError):
+        bubble_sort(int_input)
+    
+    #Arrange - Test with None (should raise TypeError on len())
+    none_input = None
+    #Act & Assert
+    with pytest.raises(TypeError):
+        bubble_sort(none_input)
+
